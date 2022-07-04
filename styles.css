@@ -1,0 +1,374 @@
+/* -RESET- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* -Variaveis- */
+:root {
+    --header-height: 4.5rem;
+
+    /* -Color- */
+    --base-color: hsl(287, 89%, 37%);
+    --base-color-second: hsl(280, 100%, 13%);
+    --title-color: hsl(278, 100%, 29%);
+    --text-color: hsl(0, 0%, 50%);
+    --body-color: hsl(0, 0%, 80%);
+    --back-color: hsl(300, 3%, 15%);
+    --black-color: hsl(280, 10%, 5%);
+
+    /* fonts */
+    --title-font-size:1.8rem;
+    --subtitle-font-size: 1rem;
+  
+    --title-font: 'Poppins', sans-serif;
+    --body-font: 'DM Sans', sans-serif;
+} 
+
+/* -Base- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font: 400 1rem var(--body-font);
+    color: var(--text-color);
+    background: var(--back-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+.title {
+    font: 700 var(--title-font-size) var(--title-font);
+    color:var(--body-color);
+    -webkit-font-smoothing: auto;
+} 
+
+.divider {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent,var(--base-color), transparent);
+    width: 100%;
+}
+
+/* -Layout- */
+main {
+    margin-top: var(--header-height);
+}
+
+.container { 
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.section {
+    padding: 10rem 0;
+}
+
+.section .title {
+    margin-bottom: 1rem;
+}
+ 
+.section .text {
+    margin-bottom: 1rem;
+    font: 400 1rem var(--body-font);
+
+}
+
+.section .subtitle {
+    font-size: var(--subtitle-font-size);
+    font: 400 1.5rem var(--text-font);
+
+}
+
+.section header,
+#stars header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    height: 3.125rem;
+}
+
+#header {
+    border-bottom: 1px solid var(--body-color);
+    margin-bottom: 2rem;
+    display: flex;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--black-color);
+    width: 100%;    
+}
+
+/* -Logo- */
+.logo {
+    font: 1.5rem var(--title-font);
+    color: var(--base-color);
+}
+
+/* -Navegação- */
+nav {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav ul li {
+    text-align: center;
+}
+
+nav ul li a {
+    transition: color 0.2s;
+    position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--base-color);
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--base-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+}
+
+nav .menu ul {
+    display: flex;
+    gap: 2rem;
+}
+
+nav .menu ul li a.title {
+    font: 400 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+}
+
+
+nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+
+/* -Home- */
+#home {
+    overflow: hidden;
+}
+
+#home .container{
+    justify-content: space-between;
+    grid-auto-flow: column;
+    margin: 0 auto;
+  }
+
+#home .image {
+    position: relative;
+}
+
+#home .image img {
+    width: 40rem;
+    height: 25rem;
+}
+
+#home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: right;
+}
+
+#home .text h1 {
+    margin-bottom: 1rem;
+    color: var(--body-color);
+
+}
+  
+#home .text p {
+    margin-bottom: 2rem;
+}
+
+/* -Universo- */
+#universe .container {
+    margin: 0 auto;
+    grid-auto-flow: right;
+    display: flex;
+}
+
+#universe .image {        
+    order: 1;
+}
+
+#universe .image img {
+    position: relative;
+    width: 40rem;
+    height: 25rem;
+}
+
+#universe .text {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* -Sistema Solar- */
+.cards.grid {
+    gap: 1.5rem;
+}
+
+.cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card {
+    padding: 3.625rem 2rem;
+    box-shadow: 0px 0px 12px var(--black-color);
+    border-bottom: 0.25rem solid var(--base-color);
+    border-radius: 0.25rem 0.25rem 0 0;
+    text-align: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+  
+.card .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.card img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    margin-right: 0.5rem;
+}
+
+/* -Astros- */
+#stars .container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#stars header {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+  
+#stars blockquote {
+    padding: 2rem;
+    box-shadow: 0px 5px 12px var(--black-color);
+    border-radius: 0.25rem; 
+}
+  
+#stars blockquote p {
+    position: relative;
+    text-indent: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--body-color);
+}
+
+#stars img {
+    width: 7rem;
+    height: 7rem;
+}
+
+/* -Footer- */
+footer {
+    background: var(--base-color-second);
+}
+
+footer .section {
+    padding: 3.7rem 0;
+}
+
+footer .container {
+    align-items: center;
+}
+
+footer .contact {
+    font-size: 2.25rem;
+}
+
+footer .social {
+    grid-auto-flow: column;
+    width: fit-content;
+}
+
+footer img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    margin-right: 0.5rem;
+}
+
+/* -back-to-top- */
+.back-to-top {
+    background: var(--base-color);
+     
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+    clip-path: circle();
+    
+    font-size: 1.5rem;
+    line-height: 0;    
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: 0.3s;
+    transform: translateY(100%);
+}
+
+.back-to-top.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+  
