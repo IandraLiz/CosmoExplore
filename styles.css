@@ -195,15 +195,11 @@ nav .menu ul li a.title.active {
   }
 
 /* -Home- */
-#home {
-    overflow: hidden;
-}
-
-#home .container{
+#home .container {
     justify-content: space-between;
     grid-auto-flow: column;
     margin: 0 auto;
-  }
+}
 
 #home .image {
     position: relative;
@@ -223,7 +219,6 @@ nav .menu ul li a.title.active {
 #home .text h1 {
     margin-bottom: 1rem;
     color: var(--body-color);
-
 }
   
 #home .text p {
@@ -232,7 +227,8 @@ nav .menu ul li a.title.active {
 
 /* -Universo- */
 #universe .container {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     grid-auto-flow: right;
     display: flex;
 }
@@ -285,7 +281,7 @@ nav .menu ul li a.title.active {
 }
 
 /* -Astros- */
-#stars .container {
+#stars .container { 
     margin-left: auto;
     margin-right: auto;
 }
@@ -371,4 +367,3 @@ footer img {
     opacity: 1;
     transform: translateY(0);
 }
-  
